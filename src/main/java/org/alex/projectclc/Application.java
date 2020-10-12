@@ -23,15 +23,15 @@ public class Application {
 
     private void start() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String itemName = reader.readLine();
-        while (!itemName.equals("exit")) {
-            handle(itemName);
-            itemName = reader.readLine();
-        }
+        String fileName = reader.readLine();
+        do {
+            handle(fileName);
+            fileName = reader.readLine();
+        } while (!fileName.equals("exit"));
     }
 
-    private void handle(String inputItem) {
-        File item = new File(inputItem);
+    private void handle(String fileName) {
+        File item = new File(fileName);
         if(!item.exists()){
             System.out.println("Item not found");
             return;

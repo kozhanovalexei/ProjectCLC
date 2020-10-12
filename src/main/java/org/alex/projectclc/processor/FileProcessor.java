@@ -13,6 +13,7 @@ public class FileProcessor implements ItemProcessor {
             return;
         }
 
+        System.out.println(file.getName() + " file scanning...");
         int codeLinesCount = JavaUTF8CodeLineCounter.countCodeLines(file);
 
         System.out.println(file.getName() +" : " + codeLinesCount);
